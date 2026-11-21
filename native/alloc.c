@@ -5,6 +5,7 @@
 #include "demo.h"
 
 void *alloc_array(size_t count, size_t item_size) {
+  if (count != 0 && item_size > SIZE_MAX / count) return NULL;
   size_t total = count * item_size;
   void *p = malloc(total);
   return p;
