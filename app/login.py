@@ -9,4 +9,4 @@ bp = Blueprint("login", __name__)
 @bp.route("/login", methods=["POST"])
 def login():
     # The demo accepts any credentials; only the redirect matters here.
-    return redirect(request.args.get("return_to", "/"))
+    return redirect(safe_next(request.args.get("return_to", "/"), "/"))
