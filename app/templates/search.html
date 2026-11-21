@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+  <h1>Search</h1>
+  <form action="/search" method="get">
+    <input name="term" value="">
+    <button type="submit">Search</button>
+  </form>
+  <p>Results for {{ term|safe }}</p>
+</body>
+</html>
